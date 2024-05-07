@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $1
+#cd $1
 
 # track on git
 git add .
