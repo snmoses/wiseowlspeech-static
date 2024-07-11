@@ -62,7 +62,7 @@ div {
   }
 }
 
-.card-body {
+div p h1 h2 h3 h4 h5 {
   max-width: 800px !important;
 }
 
