@@ -1,0 +1,20 @@
+<div>
+    <div id="editor-container" style="min-height: 300px;"></div>
+
+    <!-- Hidden textarea for form submission -->
+    {{ widget }}
+
+    <script>
+        var quill = new Quill('#editor-container', {
+            theme: 'snow',
+        });
+
+        // Set the initial content if editing an existing article
+        quill.setContents(quill.clipboard.convert('{{ widget.value|escapejs }}'))
+
+        // On form submission, update the hidden textarea with Quill.js content
+        document.querySelector('form').addEventListener('submit', function() {
+            document.querySelector('#{{ widget.attrs.id }}').value = quill.root.innerHTML;
+        });
+    </script>
+</div>

@@ -1,0 +1,90 @@
+{% load static %} <!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-99PKLHYHYC"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-99PKLHYHYC'); </script>
+<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<title>Team</title>
+<link href="https://wiseowlspeech.com/about-us.html" rel="canonical"/>
+<meta content="https://wiseowlspeech.com/about-us.html" property="og:url"/>
+<meta content="https://wiseowlspeech.com/assets/img/brands/wise-owl.webp" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="Wise Owl Speech Team" name="description"/>
+<link href="{% static 'cms/assets/img/brands/Owl.jpg' %}" rel="icon" sizes="1300x906" type="image/jpeg"/>
+<link href="{% static 'cms/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'cms/assets/css/styles.min.css' %}" rel="stylesheet"/>
+</head>
+<body class="d-flex d-sm-flex d-md-flex d-lg-flex justify-content-center justify-content-sm-center justify-content-md-center" style="background: url('{% static 'cms/assets/img/body-bg.png' %}'), rgb(175,23,69);">
+{% for team_member in team_members %}<div>
+<div class="modal bg-body bg-opacity-10" id="modal-{{team_member.slug}}" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-xl modal-fullscreen-xl-down" role="document">
+<div class="modal-content">
+<div class="modal-header" id="modalMemberName">
+<h4 class="modal-title" id="memberName">{{ team_member.name }}</h4><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="padding-bottom: 43px;">
+<div class="d-md-flex justify-content-md-center align-items-md-start" style="margin: 0px;"><img alt="Cindy McCallum" class="img-fluid" data-alt="{{team_member.name}}" id="memberImage" src="{{ team_member.photo.url }}" style="max-width: 400px;"/></div>
+<div id="memberBio" style="margin-bottom: 35px;"><div>{{ team_member.content.html|safe }}</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>{% endfor %}
+<div class="card d-flex d-lg-flex justify-content-center align-items-center align-content-center align-self-center justify-content-lg-center align-items-lg-center">
+<div class="card-body" style="text-align: left;margin-top: 0px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav">
+<div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><img alt="Wise Owl Speech.com logo" aria-label="Home" src="{% static 'cms/assets/img/brands/wise-owl.webp' %}" style="max-height: 60px;transform: translate(25px);"/></a><button class="navbar-toggler" data-bs-target="#navcol-2" data-bs-toggle="collapse"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navcol-2" style="margin-top: -2px;">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link active" href="{% url 'cms:about-us.html' %}">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:services.html' %}">Services</a></li>
+<li class="nav-item"><a class="nav-link active" href="{% url 'cms:blog.html' %}">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:faq.html' %}">FAQ</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:testimonials.html' %}">Testimonials</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:expertise.html' %}">Our Areas of Expertise</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:contact.html' %}">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container py-5">
+<div class="row mb-4 mb-lg-5">
+<div class="col text-center m-auto" style="padding-left: 31px;padding-right: 31px;">
+<h2 class="fw-bold">About Us</h2>
+<p>WiseOwlSpeech was founded in 2014 with one Speech-Language Pathologist and has since grown to the amazing team we have today! We are bigger but continue to provide personal, individualized speech therapy services in a compassionate and fun environment.</p>
+</div>
+</div>
+<div class="row row-cols-2 row-cols-md-3 mx-auto" style="max-width: 700px;">
+{% for team_member in team_members %}<div class="col"><div>
+<div class="col mb-4">
+<div class="text-center">
+<a class="team-member" data-bs-target="#modal-{{team_member.slug}}" data-bs-toggle="modal" data-member-id="{{team_member.slug}}" href="#">
+<img alt="{{ team_member.name }}" class="rounded img-fluid mb-3 fit-cover profile-pic" height="150" src="{{ team_member.photo.url }}" style="height: inherit;max-height: 150px;height: inherit;max-height: 150px;object-fit: cover;*//*object-position: center top;" width="150"/>
+<h5 class="fw-bold mb-0 link-success">{{ team_member.name }}</h5>
+<p class="text-muted mb-2 link-success">Read more...</p>
+</a></div>
+</div>
+</div></div>{% endfor %}
+</div>
+</div>
+<footer class="bg-primary-gradient" style="background: var(--bs-body-bg);">
+<div class="container py-4 py-lg-5" style="background: var(--bs-body-bg);">
+<hr/>
+<div class="text-muted d-flex justify-content-between align-items-center pt-3">
+<p class="mb-0">Copyright © Wise Owl Speech {% now "Y" %}</p>
+<ul class="list-inline mb-0">
+<li class="list-inline-item"><a aria-label="Facebook" href="https://www.facebook.com/wiseowlspeech/" target="_blank"><svg class="bi bi-facebook" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
+</svg></a></li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<script src="{% static 'cms/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'cms/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cms/assets/js/script.min.js' %}"></script>
+</body>
+</html>

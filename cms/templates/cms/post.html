@@ -1,0 +1,68 @@
+{% load static %} <!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-99PKLHYHYC"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-99PKLHYHYC'); </script>
+<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<title>Wise Owl Speech</title>
+<link href="https://wiseowlspeech.com/post.html" rel="canonical"/>
+<meta content="https://wiseowlspeech.com/post.html" property="og:url"/>
+<meta content="https://wiseowlspeech.com/assets/img/brands/wise-owl.webp" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="Wise Owl Speech" name="description"/>
+<link href="{% static 'cms/assets/img/brands/Owl.jpg' %}" rel="icon" sizes="1300x906" type="image/jpeg"/>
+<link href="{% static 'cms/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'cms/assets/css/styles.min.css' %}" rel="stylesheet"/>
+</head>
+<body class="d-flex d-sm-flex d-md-flex d-lg-flex justify-content-center align-items-center align-content-center align-self-center flex-wrap justify-content-sm-center justify-content-md-center" style="background: url('{% static 'cms/assets/img/body-bg.png' %}'), rgb(175,23,69);">
+<div class="card d-flex d-lg-flex justify-content-center align-items-center align-content-center align-self-center justify-content-lg-center align-items-lg-center">
+<div class="card-body" style="text-align: left;margin-top: -2px;padding-right: 0px;padding-left: 0px;">
+<nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav">
+<div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><img alt="Wise Owl Speech.com logo" aria-label="Home" src="{% static 'cms/assets/img/brands/wise-owl.webp' %}" style="max-height: 60px;transform: translate(25px);"/></a><button class="navbar-toggler" data-bs-target="#navcol-2" data-bs-toggle="collapse"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navcol-2" style="margin-top: -2px;">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:about-us.html' %}">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:services.html' %}">Services</a></li>
+<li class="nav-item"><a class="nav-link active" href="{% url 'cms:blog.html' %}">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:faq.html' %}">FAQ</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:testimonials.html' %}">Testimonials</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:expertise.html' %}">Our Areas of Expertise</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'cms:contact.html' %}">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div style="margin: 0px;margin-left: 0px;padding: 0px;padding-left: 0px;">
+<section class="position-relative py-4 py-xl-5">
+<div class="container position-relative">
+<div class="card mb-5">
+<div class="card-body p-sm-5" style="margin-top: 0px;">
+<h2 class="text-start mb-4" style="color: var(--bs-red);font-weight: bold;">{{blog_post.title}}</h2>
+{% if blog_post.teaser %}<h3 class="text-start mb-4" style="color: rgba(220,53,69,0.75);font-weight: bold;">{{ blog_post.teaser }}</h3>{% endif %}
+<div>{{blog_post.content.html|safe}}</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="bg-primary-gradient" style="background: var(--bs-body-bg);">
+<div class="container py-4 py-lg-5" style="background: var(--bs-body-bg);">
+<hr/>
+<div class="text-muted d-flex justify-content-between align-items-center pt-3">
+<p class="mb-0">Copyright © Wise Owl Speech {% now "Y" %}</p>
+<ul class="list-inline mb-0">
+<li class="list-inline-item"><a aria-label="Facebook" href="https://www.facebook.com/wiseowlspeech/" target="_blank"><svg class="bi bi-facebook" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
+</svg></a></li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<script src="{% static 'cms/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'cms/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'cms/assets/js/script.min.js' %}"></script>
+</body>
+</html>
