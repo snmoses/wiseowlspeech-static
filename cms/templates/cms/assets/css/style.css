@@ -62,6 +62,10 @@ div {
   }
 }
 
+.card-body {
+  max-width: 800px !important;
+}
+
 .modal-body {
   position: relative;
   flex: 1 1 auto;
@@ -75,11 +79,20 @@ div {
   --bs-nav-pills-link-active-bg: #92c889;
 }
 
-.nav-item {
+.vertical-tab {
   min-height: 100px;
 }
 
+.nav-item:not(.vertical-tab) {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .nav-item a {
+  max-width: 90px;
   min-height: 100%;
   display: flex;
   align-items: center;
@@ -205,5 +218,8 @@ div {
   --bs-form-valid-border-color: #00b779;
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
+}
+
+a {
 }
 
