@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-99PKLHYHYC"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-99PKLHYHYC'); </script>
 <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-<title>FAQ</title>
+<title>{% block title %}FAQ{% endblock %}</title>
 <link href="https://wiseowlspeech.com/faq.html" rel="canonical"/>
 <meta content="https://wiseowlspeech.com/faq.html" property="og:url"/>
 <meta content="https://wiseowlspeech.com/assets/img/brands/wise-owl.webp" property="og:image"/>
 <meta content="website" property="og:type"/>
-<meta content="Wise Owl Speech" name="description"/>
+<meta content="{% block meta-description %}Wise Owl Speech{% endblock %}" name="description"/>
 <link href="{% static 'cms/assets/img/brands/Owl.jpg' %}" rel="icon" sizes="1300x906" type="image/jpeg"/>
 <link href="{% static 'cms/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
 <link href="{% static 'cms/assets/css/Inter.css' %}" rel="stylesheet"/>
