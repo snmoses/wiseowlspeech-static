@@ -27,6 +27,7 @@ DEBUG = debug_str.lower() in ['true', '1', 'yes']
 
 CSRF_TRUSTED_ORIGINS_str = os.getenv('DJANGO_CSRF_TRUSTED_ORIGINS_wiseowlspeech', '')
 CSRF_TRUSTED_ORIGINS = CSRF_TRUSTED_ORIGINS_str.split(',')
+CSRF_TRUSTED_ORIGINS = ['https://wiseowlspeech.com', 'https://www.wiseowlspeech.com']
 
 ALLOWED_HOSTS_str = os.getenv('DJANGO_ALLOWED_HOSTS_wiseowlspeech', '')
 ALLOWED_HOSTS = ALLOWED_HOSTS_str.split(',')
