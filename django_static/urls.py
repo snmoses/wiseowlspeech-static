@@ -20,10 +20,28 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib import sitemaps
+from django.contrib.sitemaps.views import sitemap
+from cms.sitemaps import (
+    StaticViewSitemap,
+    ArticleSitemap,
+)  # , TeamMemberSitemap, TestimonialSitemap
+
+sitemaps_dict = {
+    "static": StaticViewSitemap,
+}
+
+sitemaps_dict = {
+    "static": StaticViewSitemap,
+    "article": ArticleSitemap,
+    # "team": TeamMemberSitemap,
+    # "testimonials": TestimonialSitemap,
+}
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include('cms.urls'))
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps_dict}, name="sitemap"),
+    path("", include("cms.urls")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -22,15 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY_django_wiseowlspeech")
 
-debug_str = os.getenv('DJANGO_DEBUG', 'False')
-DEBUG = debug_str.lower() in ['true', '1', 'yes']
+debug_str = os.getenv("DJANGO_DEBUG", "False")
+DEBUG = debug_str.lower() in ["true", "1", "yes"]
 
-CSRF_TRUSTED_ORIGINS_str = os.getenv('DJANGO_CSRF_TRUSTED_ORIGINS_wiseowlspeech', '')
-CSRF_TRUSTED_ORIGINS = CSRF_TRUSTED_ORIGINS_str.split(',')
-CSRF_TRUSTED_ORIGINS = ['https://wiseowlspeech.com', 'https://www.wiseowlspeech.com']
+CSRF_TRUSTED_ORIGINS_str = os.getenv("DJANGO_CSRF_TRUSTED_ORIGINS_wiseowlspeech", "")
+CSRF_TRUSTED_ORIGINS = CSRF_TRUSTED_ORIGINS_str.split(",")
+CSRF_TRUSTED_ORIGINS = ["https://wiseowlspeech.com", "https://www.wiseowlspeech.com"]
 
-ALLOWED_HOSTS_str = os.getenv('DJANGO_ALLOWED_HOSTS_wiseowlspeech', '')
-ALLOWED_HOSTS = ALLOWED_HOSTS_str.split(',')
+ALLOWED_HOSTS_str = os.getenv("DJANGO_ALLOWED_HOSTS_wiseowlspeech", "")
+ALLOWED_HOSTS = ALLOWED_HOSTS_str.split(",")
 
 # Application definition
 
@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'cms.apps.DjangoStaticProjectConfig',
-    'django_quill',
-    'rest_framework',
-    'django_distill'
+    "django.contrib.sitemaps",
+    "cms.apps.DjangoStaticProjectConfig",
+    "django_quill",
+    "rest_framework",
+    "django_distill",
 ]
 
 MIDDLEWARE = [
@@ -63,8 +64,7 @@ ROOT_URLCONF = "django_static.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -72,13 +72,13 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                'cms.context_processors.global_variables',
+                "cms.context_processors.global_variables",
             ],
         },
     },
 ]
 
-#WSGI_APPLICATION = "django_static.wsgi.application"
+# WSGI_APPLICATION = "django_static.wsgi.application"
 
 
 # Database
@@ -126,22 +126,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Media files (Uploaded files)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-'''
+"""
 QUILL_CONFIGS = {
     'default':{
         'theme': 'snow',
@@ -162,4 +162,4 @@ QUILL_CONFIGS = {
         }
     }
 }
-'''
+"""
