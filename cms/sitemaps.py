@@ -6,6 +6,7 @@ from .models import TeamMember, Article, Testimonials
 class StaticViewSitemap(Sitemap):
     priority = 0.5
     changefreq = "monthly"
+    protocol = "https"
 
     def items(self):
         return [
@@ -35,6 +36,7 @@ class StaticViewSitemap(Sitemap):
 class ArticleSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
+    protocol = "https"
 
     def items(self):
         return Article.objects.filter(published=True)
