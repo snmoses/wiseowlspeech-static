@@ -6,7 +6,7 @@ from . import views
 
 
 def get_article_slugs_for_django_distill():
-    for article in Article.objects.all():
+    for article in Article.objects.filter(published=True):
         yield {'slug': article.slug}
 
 
@@ -46,4 +46,3 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-print(f'urlpatterns {urlpatterns}')
