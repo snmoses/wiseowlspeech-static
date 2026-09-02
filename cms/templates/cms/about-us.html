@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <!-- Google tag (gtag.js) --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-99PKLHYHYC"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-99PKLHYHYC'); </script>
 <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-<title>{% block title %}Team{% endblock %}</title>
+<title>{% block title %}About Wise Owl Speech | Speech-Language Pathologists{% endblock %}</title>
 <link href="https://wiseowlspeech.com/about-us.html" rel="canonical"/>
 <meta content="https://wiseowlspeech.com/about-us.html" property="og:url"/>
 <meta content="https://wiseowlspeech.com/assets/img/brands/wise-owl.webp" property="og:image"/>
 <meta content="website" property="og:type"/>
-<meta content="{% block meta-description %}Wise Owl Speech Team{% endblock %}" name="description"/>
+<meta content="{% block meta-description %}Meet the WiseOwlSpeech team of speech-language pathologists providing personalized, family-centered speech therapy services in Alberta and online.{% endblock %}" name="description"/>
 <link href="{% static 'cms/assets/img/brands/Owl.jpg' %}" rel="icon" sizes="1300x906" type="image/jpeg"/>
 <link href="{% static 'cms/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
 <link href="{% static 'cms/assets/css/Inter.css' %}" rel="stylesheet"/>
@@ -55,7 +55,7 @@
 <div class="container py-5">
 <div class="row mb-4 mb-lg-5">
 <div class="col text-center m-auto" style="padding-left: 31px;padding-right: 31px;">
-<h2 class="fw-bold">About Us</h2>
+<h1 class="fw-bold">About WiseOwlSpeech</h1>
 <p>WiseOwlSpeech was founded in 2014 with one Speech-Language Pathologist and has since grown to the amazing team we have today! We are bigger but continue to provide personal, individualized speech therapy services in a compassionate and fun environment.</p>
 </div>
 </div>
@@ -65,7 +65,7 @@
 <div class="text-center">
 <a class="team-member" data-bs-target="#modal-{{team_member.slug}}" data-bs-toggle="modal" data-member-id="{{team_member.slug}}" href="#">
 <img alt="{{ team_member.name }}" class="rounded img-fluid mb-3 fit-cover profile-pic" height="150" src="{{ team_member.photo.url }}" style="height: inherit;max-height: 150px;height: inherit;max-height: 150px;object-fit: cover;*//*object-position: center top;" width="150"/>
-<h5 class="fw-bold mb-0 link-success">{{ team_member.name }}</h5>
+<p class="h5 fw-bold mb-0 link-success">{{ team_member.name }}</p>
 <p class="text-muted mb-2 link-success">Read more...</p>
 </a></div>
 </div>
