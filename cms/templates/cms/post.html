@@ -10,7 +10,7 @@
 <meta content="https://wiseowlspeech.com/post.html" property="og:url"/>
 <meta content="https://wiseowlspeech.com/assets/img/brands/wise-owl.webp" property="og:image"/>
 <meta content="website" property="og:type"/>
-<meta content="{% block meta-description %}Wise Owl Speech{% endblock %}" name="description"/>
+<meta content="{% block meta-description %}Read speech-language therapy insights and communication development guidance from WiseOwlSpeech.{% endblock %}" name="description"/>
 <link href="{% static 'cms/assets/img/brands/Owl.jpg' %}" rel="icon" sizes="1300x906" type="image/jpeg"/>
 <link href="{% static 'cms/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
 <link href="{% static 'cms/assets/css/Inter.css' %}" rel="stylesheet"/>
@@ -42,7 +42,7 @@
 <div class="container position-relative">
 <div class="card mb-5">
 <div class="card-body p-sm-5" style="margin-top: 0px;">
-<h2 class="text-start mb-4 blog-headline fs-3">{{blog_post.title}}</h2>
+<h1 class="text-start mb-4 blog-headline fs-3">{{blog_post.title}}</h1>
 {% if blog_post.teaser %}<h3 class="text-start mb-4 blog-teaser fs-5">{{ blog_post.teaser }}</h3>{% endif %}
 <div>{{blog_post.content.html|safe}}</div>
 </div>
